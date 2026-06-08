@@ -188,6 +188,32 @@ tr.clickable { cursor: pointer; }
 #tab-intro .lk { display:inline-block; background:#fff7ee; border:1px solid #f1d2a3; color:#d77407; text-decoration:none; font-weight:700; font-size:12px; padding:4px 10px; border-radius:8px; margin:3px 6px 3px 0; }
 #tab-intro .lk:hover { background:#ffeede; }
 @media (max-width:760px){ #tab-intro .intro-hero{grid-template-columns:repeat(2,1fr)} #tab-intro .intro-charts{grid-template-columns:1fr} }
+/* 大会リスト（PCは2列・スマホは1列） */
+#tab-intro .ev2 { columns:2; -webkit-columns:2; }
+/* ===== スマホ最適化 ===== */
+@media (max-width:560px){
+  #tab-intro .intro-frame { padding:8px; border-radius:18px; margin:4px auto 16px; }
+  #tab-intro .intro-sheet { padding:14px 12px 16px; }
+  #tab-intro .intro-title { font-size:22px; -webkit-text-stroke:3px #fff; letter-spacing:0; }
+  #tab-intro .intro-logo { width:44px; height:44px; }
+  #tab-intro .intro-title-row { gap:8px; }
+  #tab-intro .intro-tagline { font-size:11.5px; }
+  #tab-intro .intro-hero { grid-template-columns:repeat(2,1fr); gap:8px; }
+  #tab-intro .hero { padding:12px 6px; }
+  #tab-intro .hero .hv { font-size:23px; }
+  #tab-intro .intro-subgrid { grid-template-columns:repeat(2,1fr); }
+  #tab-intro .intro-charts { grid-template-columns:1fr; }
+  #tab-intro .sec { padding:13px 12px 14px; }
+  #tab-intro .sec li { font-size:13px; padding-left:15px; }
+  #tab-intro .ev2 { columns:1; -webkit-columns:1; }
+  #tab-intro .steptbl { font-size:11.5px; }
+  #tab-intro .steptbl th, #tab-intro .steptbl td { padding:5px 5px; }
+  #tab-intro .sabarogo { width:44px; top:8px; right:8px; }
+  #tab-intro .admin .ainfo { min-width:0; }
+  #tab-intro .bigcall { font-size:13.5px; }
+  #tab-intro .xpavg { font-size:13px; padding:7px 14px; }
+  #tab-intro .xpavg b { font-size:21px; }
+}
 </style>
 
 <style id="public-css">
@@ -197,7 +223,7 @@ tr.clickable { cursor: pointer; }
 </style>
 <script id="public-bake">
 (function(){
-  var B = {"intro": {"available": true, "today": "2026/06/08", "matches_total": 841, "players_unique": 106, "active_days": 18, "avg_matches_per_day": 46.7, "weekday_matches": [107, 97, 114, 101, 147, 196, 79], "busy_weekday": "土", "weekday_by_type": {"対式プラベ": [97, 61, 99, 63, 97, 105, 45], "キャタトラ交流プラベ": [10, 15, 15, 7, 22, 0, 20], "キャタピー応援プラベ": [0, 21, 0, 11, 0, 0, 0], "バタフリープラベ": [0, 0, 0, 0, 8, 9, 1], "n勝プラベ": [0, 0, 0, 0, 0, 7, 0], "エンジョイプラベ": [0, 0, 0, 0, 0, 0, 2]}, "players_week": 84, "heatmap": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 0, 0, 5, 16, 8], [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 3, 4, 6, 10, 0, 10, 0, 0, 20, 6, 13, 10], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 10, 0, 19], [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 8, 0, 0, 0, 21, 8, 11, 10], [0, 0, 0, 0, 0, 0, 0, 0, 3, 6, 12, 11, 0, 0, 0, 3, 9, 6, 0, 0, 10, 1, 0, 9], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 11, 0, 0, 0, 14, 0, 0, 9, 5, 14, 0]], "biweek": {"dates": ["2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08"], "by_type": {"キャタトラ交流プラベ": [7, 3, 0, 10, 0, 10, 8, 12, 7, 12, 0, 20, 0], "キャタピー応援プラベ": [10, 0, 11, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0], "対式プラベ": [41, 18, 32, 39, 51, 43, 20, 81, 31, 58, 54, 45, 8], "バタフリープラベ": [0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9, 1, 0], "n勝プラベ": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0], "エンジョイプラベ": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0]}}, "yearly": [{"year": "2021", "players": 17}, {"year": "2022", "players": 33}, {"year": "2023", "players": 19}, {"year": "2024", "players": 49}, {"year": "2025", "players": 58}, {"year": "2026", "players": 37}], "area_avg": 2653, "max_avg": 2660, "members_current": 213, "active_rate_1m": 73.7, "active_rate_1y": 97.2, "vc_hours": [1323, 415, 106, 59, 23, 23, 36, 54, 203, 333, 444, 502, 477, 849, 1059, 1035, 872, 841, 413, 1242, 2387, 4634, 3356, 3069], "vc_peak_hour": 21, "messages_total": 40405, "recruit_total": 19898, "avg_msg": 24.4, "avg_recruit": 12.0, "span": "2021-11-26 〜 2026-06-08", "channel_count": 37}, "xp": {"available": true, "rows": [["", "", "", "エリアXP", "", "最高XP", ""], ["", "～", "2399", "28人", "13.8%", "25人", "12.3%"], ["2400", "～", "2499", "24人", "11.8%", "25人", "12.3%"], ["2500", "～", "2599", "28人", "13.8%", "27人", "13.3%"], ["2600", "～", "2699", "41人", "20.2%", "39人", "19.2%"], ["2700", "～", "2799", "34人", "16.7%", "39人", "19.2%"], ["2800", "～", "2899", "21人", "10.3%", "21人", "10.3%"], ["2900", "～", "2999", "17人", "8.4%", "15人", "7.4%"], ["3000", "～", "", "10人", "4.9%", "12人", "5.9%"]], "area_avg": 2653, "max_avg": 2660}};
+  var B = {"intro": {"available": true, "today": "2026/06/08", "matches_total": 846, "players_unique": 106, "active_days": 18, "avg_matches_per_day": 47.0, "weekday_matches": [112, 97, 114, 101, 147, 196, 79], "busy_weekday": "土", "weekday_by_type": {"対式プラベ": [102, 61, 99, 63, 97, 105, 45], "キャタトラ交流プラベ": [10, 15, 15, 7, 22, 0, 20], "キャタピー応援プラベ": [0, 21, 0, 11, 0, 0, 0], "バタフリープラベ": [0, 0, 0, 0, 8, 9, 1], "n勝プラベ": [0, 0, 0, 0, 0, 7, 0], "エンジョイプラベ": [0, 0, 0, 0, 0, 0, 2]}, "players_week": 84, "heatmap": [[0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 10, 3, 0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 1, 0, 0, 5, 16, 8], [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 3, 4, 6, 10, 0, 10, 0, 0, 20, 6, 13, 10], [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9, 10, 0, 19], [3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 10, 8, 0, 0, 0, 21, 8, 11, 10], [0, 0, 0, 0, 0, 0, 0, 0, 3, 6, 12, 11, 0, 0, 0, 3, 9, 6, 0, 0, 10, 1, 0, 9], [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 11, 0, 0, 0, 14, 0, 0, 9, 5, 14, 0]], "biweek": {"dates": ["2026-05-26", "2026-05-27", "2026-05-28", "2026-05-29", "2026-05-30", "2026-06-01", "2026-06-02", "2026-06-03", "2026-06-04", "2026-06-05", "2026-06-06", "2026-06-07", "2026-06-08"], "by_type": {"キャタトラ交流プラベ": [7, 3, 0, 10, 0, 10, 8, 12, 7, 12, 0, 20, 0], "キャタピー応援プラベ": [10, 0, 11, 0, 0, 0, 11, 0, 0, 0, 0, 0, 0], "対式プラベ": [41, 18, 32, 39, 51, 43, 20, 81, 31, 58, 54, 45, 13], "バタフリープラベ": [0, 0, 0, 0, 0, 0, 0, 0, 0, 8, 9, 1, 0], "n勝プラベ": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 7, 0, 0], "エンジョイプラベ": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0]}}, "yearly": [{"year": "2021", "players": 17}, {"year": "2022", "players": 33}, {"year": "2023", "players": 19}, {"year": "2024", "players": 49}, {"year": "2025", "players": 58}, {"year": "2026", "players": 37}], "area_avg": 2653, "max_avg": 2660, "members_current": 213, "active_rate_1m": 73.7, "active_rate_1y": 97.2, "vc_hours": [1323, 415, 106, 59, 23, 23, 36, 54, 203, 333, 444, 502, 477, 849, 1059, 1035, 872, 841, 413, 1242, 2387, 4634, 3356, 3069], "vc_peak_hour": 21, "messages_total": 40405, "recruit_total": 19898, "avg_msg": 24.4, "avg_recruit": 12.0, "span": "2021-11-26 〜 2026-06-08", "channel_count": 37}, "xp": {"available": true, "rows": [["", "", "", "エリアXP", "", "最高XP", ""], ["", "～", "2399", "28人", "13.8%", "25人", "12.3%"], ["2400", "～", "2499", "24人", "11.8%", "25人", "12.3%"], ["2500", "～", "2599", "28人", "13.8%", "27人", "13.3%"], ["2600", "～", "2699", "41人", "20.2%", "39人", "19.2%"], ["2700", "～", "2799", "34人", "16.7%", "39人", "19.2%"], ["2800", "～", "2899", "21人", "10.3%", "21人", "10.3%"], ["2900", "～", "2999", "17人", "8.4%", "15人", "7.4%"], ["3000", "～", "", "10人", "4.9%", "12人", "5.9%"]], "area_avg": 2653, "max_avg": 2660}};
   var of = window.fetch ? window.fetch.bind(window) : null;
   window.fetch = function(url){
     var u = String(url);
@@ -667,7 +693,7 @@ tr.clickable { cursor: pointer; }
       <div class="sec">
         <span class="sec-h o">🎮 鯖内大会・イベント例</span>
         <div class="note2" style="margin-bottom:8px">主な開催日時：<b style="color:#c0392b">金・土 22:00〜24:00 ／ 日 21:00〜23:00</b></div>
-        <ul style="columns:2;-webkit-columns:2">
+        <ul class="ev2">
           <li>XPランク別大会</li>
           <li>PAIR's杯（2人で最高勝率を目指す）</li>
           <li>ひな祭り杯</li>
