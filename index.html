@@ -148,6 +148,8 @@ tr.clickable { cursor: pointer; }
 #tab-intro .formbtn:hover { background:#46b365; }
 #tab-intro .nextrec { text-align:center; color:#3fa45b; font-size:13px; font-weight:800; margin:2px 0 12px; }
 #tab-intro .nextrec b { color:#e8852a; font-size:15px; }
+#tab-intro .two-col { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-top:14px; align-items:start; }
+#tab-intro .two-col .sec { margin-top:0; }
 /* ランク分けカード */
 #tab-intro .rankgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:10px; }
 #tab-intro .rankcard { background:#fff; border:1px solid #eee; border-radius:12px; overflow:hidden; }
@@ -197,6 +199,7 @@ tr.clickable { cursor: pointer; }
 /* ===== スマホ最適化 ===== */
 @media (max-width:560px){
   #tab-intro .mk { white-space:normal; }
+  #tab-intro .two-col { grid-template-columns:1fr; }
   #tab-intro .intro-frame { padding:8px; border-radius:18px; margin:4px auto 16px; }
   #tab-intro .intro-sheet { padding:14px 12px 16px; }
   #tab-intro .intro-title { font-size:22px; -webkit-text-stroke:3px #fff; letter-spacing:0; }
@@ -648,40 +651,34 @@ tr.clickable { cursor: pointer; }
         </ul>
       </div>
 
-      <!-- 大人鯖のコンセプト -->
+      <!-- 大人鯖のコンセプト（ご家庭の事情を統合）-->
       <div class="sec">
         <span class="sec-h o">🌟 大人鯖のコンセプト</span>
         <div class="bigcall">「気軽にゆるく楽しく・サクッとエンジョイ！」</div>
-        <div class="note2" style="margin-bottom:6px">鯖運営の歴史も長く、人間関係のトラブルを避けるため注意事項が多めです。鯖内の雰囲気を守るために、最低限 以下のことは常に意識してください。</div>
         <ul>
           <li><span class="mk b">✔ ポジティブな発言を心がける</span></li>
           <li><span class="mk b">✔ 挨拶をする</span></li>
           <li><span class="mk b">✔ 時間を守る</span></li>
         </ul>
-        <div class="note2">この3つを守ることができれば、基本的にはOKだと思います！</div>
-      </div>
-
-      <!-- 報告でして良いこと -->
-      <div class="sec">
-        <span class="sec-h b">🛡️ 報告でして良いこと</span>
-        <ul>
-          <li><b>見えている現状を味方に知らせる</b>・<b>自分の行動を宣言する</b> のみ です。</li>
-          <li>気になって言っちゃう人は <span class="mk">『味方は見ない・意識しない』</span> でプレイすると良いかもしれません。</li>
-        </ul>
-      </div>
-
-      <!-- 味方への言動 -->
-      <div class="sec">
-        <span class="sec-h r">💡 味方への言動（トラブル防止）</span>
-        <div class="note2" style="margin-bottom:8px">よくトラブルになっているのは味方に対しての言動です。<b>ほぼ指示と受け取られますし、NGとしています。</b></div>
-        <div class="pv"><div class="pvd">例：<br>「◯◯さん、手前で潜伏していい」<br>「◯◯さん、下がって飛ばして欲しい」<br><span class="mk r">❌ これらはNGです</span></div></div>
-        <div class="note2" style="margin-top:8px">勝った・負けたに関わらず、<b>他責思考はNG</b>。自責もしすぎると雰囲気が悪くなるので、基本は <span class="mk">「どんまい！」</span> でお願いします！</div>
-      </div>
-
-      <!-- ご家庭の事情 -->
-      <div class="sec">
-        <span class="sec-h o">👪 ご家庭の事情について</span>
+        <div style="margin-top:12px;font-weight:800;color:#d77407">👪 ご家庭の事情について</div>
         <div class="note2">お子さんがいらっしゃる方で、途中で夜泣き対応などが必要な場合は <b>遠慮なくお知らせください</b>。運営者自身も子育て中で、予定通りにいかないことがあるからこそ、この鯖を作りました！</div>
+      </div>
+
+      <!-- 報告でして良いこと ＆ 味方への言動（横2列）-->
+      <div class="two-col">
+        <div class="sec">
+          <span class="sec-h b">🛡️ 報告でして良いこと</span>
+          <ul>
+            <li><b>見えている現状を味方に知らせる</b>・<b>自分の行動を宣言する</b> のみ です。</li>
+            <li>気になって言っちゃう人は <span class="mk">『味方は見ない・意識しない』</span> でプレイすると良いかもしれません。</li>
+          </ul>
+        </div>
+        <div class="sec">
+          <span class="sec-h r">💡 味方への言動（トラブル防止）</span>
+          <div class="note2" style="margin-bottom:8px">よくトラブルになっているのは味方に対しての言動です。<b>ほぼ指示と受け取られますし、NGとしています。</b></div>
+          <div class="pv"><div class="pvd">例：<br>「◯◯さん、手前で潜伏していい」<br>「◯◯さん、下がって飛ばして欲しい」<br><span class="mk r">❌ これらはNGです</span></div></div>
+          <div class="note2" style="margin-top:8px">勝った・負けたに関わらず、<b>他責思考はNG</b>。自責もしすぎると雰囲気が悪くなるので、基本は <span class="mk">「どんまい！」</span> でお願いします！</div>
+        </div>
       </div>
 
       <!-- ランク分けシステム -->
