@@ -277,6 +277,21 @@ tr.clickable { cursor: pointer; }
   #tab-intro .intro-hero > *, #tab-intro .intro-subgrid > *, #tab-intro .hero { min-width:0; }
   #tab-intro .steptbl { width:100%; table-layout:fixed; }
   #tab-intro .steptbl th:first-child, #tab-intro .steptbl td:first-child { width:38px; }
+  /* スマホの文字サイズを3段階に統一（前は9〜14pxがバラバラだった）
+       本文 12.5px ／ 補足 11px ／ 表 11.5px */
+  #tab-intro .sec li, #tab-intro .mk, #tab-intro .ainfo, #tab-intro .sec p,
+  #tab-intro .pv .pvd, #tab-intro .sec span { font-size:12.5px; line-height:1.75; }
+  #tab-intro .note2, #tab-intro .sec .note2, #tab-intro .chnote, #tab-intro .rankfoot,
+  #tab-intro .faq-count, #tab-intro .hm-hint, #tab-intro .i-today,
+  #tab-intro .intro-note { font-size:11px; line-height:1.7; }
+  #tab-intro .steptbl, #tab-intro .steptbl td, #tab-intro .steptbl th { font-size:11.5px; }
+  #tab-intro .lk { font-size:12.5px; }                      /* リンクも本文サイズに */
+  #tab-intro .pv .pvn, #tab-intro .bigcall { font-size:13px; }  /* 小見出し・強調は13pxで統一 */
+  /* 入れ子のpaddingで左右に64px使っていたぶんを詰めて、1行に入る文字を増やす */
+  #tab-intro .intro-frame { padding:6px; }
+  #tab-intro .intro-sheet { padding:12px 8px 14px; }
+  #tab-intro .sec { padding:12px 9px 13px; }
+  #tab-intro .sec li { padding-left:13px; }
   #tab-intro .admin { gap:10px; }
   #tab-intro .admin img { width:104px; }
   #tab-intro .admin .ainfo { flex:1 1 100%; min-width:0; font-size:12.5px; line-height:1.85; }
