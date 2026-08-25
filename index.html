@@ -126,7 +126,10 @@ tr.clickable { cursor: pointer; }
 #tab-intro .sub2 .l { font-size:11.5px; color:#a98e6a; font-weight:700; }
 #tab-intro .sub2 .v { font-size:17px; font-weight:800; color:#d77407; margin-top:3px; }
 #tab-intro .intro-charts { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-top:14px; }
-#tab-intro .intro-card { background:#fff; border:2px solid #f1d2a3; border-radius:14px; padding:10px 12px; }
+#tab-intro .intro-card { background:#fff; border:2px solid #f1d2a3; border-radius:14px; padding:10px 12px;
+                         min-width:0; }   /* グリッドの中で縮めるように。無いとグラフがはみ出す */
+#tab-intro .intro-charts > * { min-width:0; }
+#tab-intro canvas { max-width:100% !important; }   /* Chart.jsの300px固定がスマホで溢れるため */
 #tab-intro .intro-h { font-weight:800; color:#e8852a; font-size:15px; margin-bottom:6px; }
 #tab-intro .intro-note { text-align:center; color:#7a7164; font-size:13px; line-height:1.95; margin:16px 4px 4px; font-weight:700; }
 #tab-intro .intro-footer { display:flex; align-items:center; justify-content:flex-end; gap:8px; margin-top:12px; color:#bcae92; font-size:14px; letter-spacing:.06em; }
@@ -184,6 +187,11 @@ tr.clickable { cursor: pointer; }
 #tab-intro .steptbl td { padding:6px 8px; border:1px solid #eee; color:#555; vertical-align:top; }
 #tab-intro .steptbl td:first-child { text-align:center; font-weight:800; color:#e8852a; }
 /* 管理人紹介・鯖ロゴ */
+/* 日本語は既定だとどこでも折り返すので、文節の切れ目で折るよう指定。
+   word-break:auto-phrase は対応ブラウザだけ効き、非対応でも従来どおり表示される */
+#tab-intro, #tab-intro p, #tab-intro li, #tab-intro td, #tab-intro .ainfo,
+#tab-intro .note2, #tab-intro .intro-note { word-break:auto-phrase; line-break:strict; }
+#tab-intro .sec-h, #tab-intro .intro-h, #tab-intro .bigcall { text-wrap:balance; }
 #tab-intro .admin { display:flex; gap:14px; align-items:flex-start; flex-wrap:wrap; }
 #tab-intro .admin img { width:130px; border-radius:12px; border:2px solid #f1b85a; flex-shrink:0; object-fit:cover; }
 #tab-intro .admin .ainfo { flex:1; min-width:230px; font-size:13px; line-height:1.9; color:#4a4a4a; }
@@ -199,7 +207,7 @@ tr.clickable { cursor: pointer; }
 @media (max-width:760px){ #tab-intro .sabarogo{ width:58px; top:8px; right:8px; } }
 #tab-intro .chnote { font-size:10px; color:#c7bda9; margin:-3px 0 4px; font-weight:400; letter-spacing:.02em; }
 /* ヒートマップの横スクロールを分かりやすく（右端フェード＋スマホ用ヒント）*/
-#tab-intro .hm-scroll { position:relative; }
+#tab-intro .hm-scroll { position:relative; overflow-x:auto; -webkit-overflow-scrolling:touch; }
 #tab-intro .hm-scroll::after { content:''; position:absolute; top:0; right:0; bottom:0; width:30px; pointer-events:none; background:linear-gradient(to right, rgba(255,255,255,0), #fff); }
 #tab-intro .hm-hint { display:none; font-size:11px; color:#d77407; font-weight:700; text-align:right; margin-top:5px; }
 @media (max-width:560px){ #tab-intro .hm-hint{ display:block; } }
@@ -235,6 +243,12 @@ tr.clickable { cursor: pointer; }
 /* ===== スマホ最適化 ===== */
 @media (max-width:560px){
   #tab-intro .mk { white-space:normal; }
+  /* 長いURLや英字が横に飛び出さないように（日本語の折返しは既定のまま） */
+  #tab-intro a, #tab-intro .intro-note, #tab-intro .sec li { overflow-wrap:break-word; }
+  #tab-intro table { max-width:100%; }
+  #tab-intro .sec li { font-size:12.5px; line-height:1.8; }
+  #tab-intro .steptbl { font-size:11.5px; }
+  #tab-intro .steptbl td, #tab-intro .steptbl th { padding:6px 5px; }
   #tab-intro .two-col { grid-template-columns:1fr; }
   #tab-intro .intro-frame { padding:8px; border-radius:18px; margin:4px auto 16px; }
   #tab-intro .intro-sheet { padding:14px 12px 16px; }
@@ -257,7 +271,15 @@ tr.clickable { cursor: pointer; }
   #tab-intro .steptbl { font-size:11.5px; }
   #tab-intro .steptbl th, #tab-intro .steptbl td { padding:5px 5px; }
   #tab-intro .sabarogo { width:44px; top:8px; right:8px; }
-  #tab-intro .admin .ainfo { min-width:0; font-size:12px; line-height:1.75; }
+  /* 画像の横に文章を並べると幅が100px程度まで潰れて数文字ごとに改行されるので、
+     狭い画面では画像を上・文章を下（横幅いっぱい）にする */
+  /* グリッドやテーブルが数px はみ出して端が切れるのを防ぐ */
+  #tab-intro .intro-hero > *, #tab-intro .intro-subgrid > *, #tab-intro .hero { min-width:0; }
+  #tab-intro .steptbl { width:100%; table-layout:fixed; }
+  #tab-intro .steptbl th:first-child, #tab-intro .steptbl td:first-child { width:38px; }
+  #tab-intro .admin { gap:10px; }
+  #tab-intro .admin img { width:104px; }
+  #tab-intro .admin .ainfo { flex:1 1 100%; min-width:0; font-size:12.5px; line-height:1.85; }
   #tab-intro .bigcall { font-size:13.5px; }
   #tab-intro .xpavg { font-size:13px; padding:7px 14px; }
   #tab-intro .xpavg b { font-size:21px; }
