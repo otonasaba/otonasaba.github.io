@@ -27,7 +27,7 @@
   --acc: #7c6af5; --acc2: #5ed8c0;
   --txt: #e8eaf0; --muted: #8890a8; --border: #2e3248;
   --win: #4caf8a; --lose: #e05c6c; --neu: #f5c842;
-  --kyata: #f5c842; --kyatatora: #4caf8a; --bata: #c77af5; --taishiki: #f06292; --nwin: #ef9a3d; --enjoy: #26c6da;
+  --kyata: #f5c842; --kyatatora: #4caf8a; --kyatabata: #3f8fd2; --bata: #c77af5; --taishiki: #f06292; --nwin: #ef9a3d; --enjoy: #26c6da;
 }
 * { box-sizing: border-box; margin: 0; padding: 0; }
 body { background: var(--bg); color: var(--txt); font-family: 'Segoe UI', 'Noto Sans JP', sans-serif; font-size: 14px; }
@@ -51,6 +51,7 @@ header button:hover { opacity: .85; }
 .tf.active.tf-all    { color: var(--txt); background: #2e3248; border-color: var(--txt); }
 .tf.active.tf-kyata  { color: var(--kyata); background: rgba(245,200,66,.15); border-color: var(--kyata); }
 .tf.active.tf-kyatatora { color: var(--kyatatora); background: rgba(76,175,138,.15); border-color: var(--kyatatora); }
+.tf.active.tf-kyatabata { color: var(--kyatabata); background: rgba(63,143,210,.15); border-color: var(--kyatabata); }
 .tf.active.tf-bata   { color: var(--bata); background: rgba(199,122,245,.15); border-color: var(--bata); }
 .tf.active.tf-taishiki { color: var(--taishiki); background: rgba(240,98,146,.15); border-color: var(--taishiki); }
 .tf.active.tf-nwin   { color: var(--nwin); background: rgba(239,154,61,.15); border-color: var(--nwin); }
@@ -64,6 +65,7 @@ header button:hover { opacity: .85; }
 .type-card .tc-sub { font-size: 11px; color: var(--muted); margin-top: 2px; }
 .type-card.kyata    { border-left: 3px solid var(--kyata); }
 .type-card.kyatatora{ border-left: 3px solid var(--kyatatora); }
+.type-card.kyatabata{ border-left: 3px solid var(--kyatabata); }
 .type-card.bata     { border-left: 3px solid var(--bata); }
 .type-card.taishiki { border-left: 3px solid var(--taishiki); }
 .type-card.nwin     { border-left: 3px solid var(--nwin); }
@@ -335,7 +337,7 @@ tr.clickable { cursor: pointer; }
 </style>
 <script id="public-bake">
 (function(){
-  var B = {"intro": {"available": true, "today": "2026/10/28", "next_recruit": "2026年10月末", "matches_total": 5577, "players_unique": 188, "active_days": 148, "avg_matches_per_day": 37.7, "weekday_matches": [773, 564, 743, 622, 646, 1265, 964], "busy_weekday": "土", "weekday_by_type": {"対式プラベ": [37, 21, 10, 21, 0, 64, 29], "キャタトラ交流プラベ": [0, 12, 0, 0, 0, 0, 0]}, "players_2week": 59, "heatmap": [[50, 5, 0, 0, 0, 0, 0, 0, 0, 13, 19, 10, 0, 6, 28, 55, 41, 31, 15, 12, 118, 90, 133, 48], [24, 2, 0, 0, 0, 0, 0, 0, 0, 0, 6, 10, 14, 3, 28, 28, 2, 91, 15, 0, 82, 5, 130, 65], [53, 19, 3, 0, 0, 0, 0, 0, 0, 0, 0, 18, 3, 23, 33, 21, 12, 69, 2, 0, 170, 127, 103, 64], [42, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 22, 21, 20, 31, 25, 5, 8, 80, 57, 103, 130], [65, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 8, 8, 13, 47, 30, 29, 36, 5, 0, 117, 56, 37, 108], [50, 11, 0, 0, 0, 0, 0, 0, 3, 61, 114, 96, 24, 115, 144, 107, 56, 71, 15, 3, 112, 43, 62, 52], [33, 16, 13, 0, 0, 0, 0, 0, 0, 33, 74, 110, 28, 37, 76, 94, 116, 43, 27, 11, 80, 44, 69, 46]], "biweek": {"dates": ["2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-24", "2026-10-25", "2026-10-26"], "by_type": {"対式プラベ": [21, 11, 19, 21, 10, 21, 43, 18, 18], "キャタトラ交流プラベ": [0, 0, 0, 12, 0, 0, 0, 0, 0]}}, "yearly": [{"year": "2021", "players": 17}, {"year": "2022", "players": 33}, {"year": "2023", "players": 19}, {"year": "2024", "players": 43}, {"year": "2025", "players": 47}, {"year": "2026", "players": 61}], "area_avg": null, "max_avg": null, "members_current": 212, "active_rate_1m": 70.3, "active_rate_1y": 98.6, "vc_hours": [2053, 735, 203, 105, 39, 37, 55, 103, 323, 677, 833, 860, 822, 1480, 1549, 1637, 1355, 1460, 783, 1909, 3789, 7137, 5133, 4687], "vc_peak_hour": 21, "messages_total": 43745, "recruit_total": 19762, "avg_msg": 24.3, "avg_recruit": 3.6, "span": "2021-11-26 〜 2026-10-28（4年11ヶ月）", "channel_count": 36, "avg_taikou": 5.0, "avg_open": 3.8, "avg_salmon": 0.0, "rank_counts": [{"label": "キャタピー", "name": "キャタピーランク(XP2000~XP2499)", "count": 51}, {"label": "トランセル", "name": "トランセルランク(XP2500~XP2699)", "count": 71}, {"label": "バタフリー", "name": "バタフリーランク(XP2700~XP3200)", "count": 91}], "recruit_yday": 12, "msg_yday": 6, "recruit_daily": {"labels": ["10-15", "10-16", "10-17", "10-18", "10-19", "10-20", "10-21", "10-22", "10-23", "10-24", "10-25", "10-26", "10-27", "10-28"], "groups": ["対抗戦", "オープン", "サーモン", "別ゲー", "プラベ", "大会"], "series": {"対抗戦": [11, 1, 4, 10, 10, 1, 0, 4, 7, 3, 13, 2, 7, 0], "オープン": [0, 3, 7, 5, 1, 4, 6, 2, 6, 4, 4, 4, 4, 2], "サーモン": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "別ゲー": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0], "プラベ": [0, 0, 2, 2, 4, 3, 2, 2, 0, 4, 5, 2, 0, 0], "大会": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}}}, "xp": {"available": false, "error": "Remote end closed connection without response"}};
+  var B = {"intro": {"available": true, "today": "2026/10/28", "next_recruit": "2026年10月末", "matches_total": 5588, "players_unique": 188, "active_days": 149, "avg_matches_per_day": 37.5, "weekday_matches": [773, 564, 754, 622, 646, 1265, 964], "busy_weekday": "土", "weekday_by_type": {"対式プラベ": [37, 21, 21, 21, 0, 64, 29], "キャタトラ交流プラベ": [0, 12, 0, 0, 0, 0, 0]}, "players_2week": 59, "heatmap": [[50, 5, 0, 0, 0, 0, 0, 0, 0, 13, 19, 10, 0, 6, 28, 55, 41, 31, 15, 12, 118, 90, 133, 48], [24, 2, 0, 0, 0, 0, 0, 0, 0, 0, 6, 10, 14, 3, 28, 28, 2, 91, 15, 0, 82, 5, 130, 65], [53, 19, 3, 0, 0, 0, 0, 0, 0, 0, 0, 18, 3, 23, 33, 31, 13, 69, 2, 0, 170, 127, 103, 64], [42, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 12, 0, 22, 21, 20, 31, 25, 5, 8, 80, 57, 103, 130], [65, 9, 0, 0, 0, 0, 0, 0, 0, 0, 9, 8, 8, 13, 47, 30, 29, 36, 5, 0, 117, 56, 37, 108], [50, 11, 0, 0, 0, 0, 0, 0, 3, 61, 114, 96, 24, 115, 144, 107, 56, 71, 15, 3, 112, 43, 62, 52], [33, 16, 13, 0, 0, 0, 0, 0, 0, 33, 74, 110, 28, 37, 76, 94, 116, 43, 27, 11, 80, 44, 69, 46]], "biweek": {"dates": ["2026-10-17", "2026-10-18", "2026-10-19", "2026-10-20", "2026-10-21", "2026-10-22", "2026-10-24", "2026-10-25", "2026-10-26", "2026-10-28"], "by_type": {"対式プラベ": [21, 11, 19, 21, 10, 21, 43, 18, 18, 11], "キャタトラ交流プラベ": [0, 0, 0, 12, 0, 0, 0, 0, 0, 0]}}, "yearly": [{"year": "2021", "players": 17}, {"year": "2022", "players": 33}, {"year": "2023", "players": 19}, {"year": "2024", "players": 43}, {"year": "2025", "players": 47}, {"year": "2026", "players": 61}], "area_avg": 2658, "max_avg": 2666, "members_current": 212, "active_rate_1m": 70.3, "active_rate_1y": 98.6, "vc_hours": [2053, 735, 203, 105, 39, 37, 55, 103, 323, 677, 833, 860, 824, 1485, 1553, 1644, 1359, 1461, 783, 1909, 3789, 7137, 5133, 4687], "vc_peak_hour": 21, "messages_total": 43745, "recruit_total": 19767, "avg_msg": 24.3, "avg_recruit": 3.6, "span": "2021-11-26 〜 2026-10-28（4年11ヶ月）", "channel_count": 36, "avg_taikou": 5.0, "avg_open": 3.8, "avg_salmon": 0.0, "rank_counts": [{"label": "キャタピー", "name": "キャタピーランク(XP2000~XP2499)", "count": 51}, {"label": "トランセル", "name": "トランセルランク(XP2500~XP2699)", "count": 71}, {"label": "バタフリー", "name": "バタフリーランク(XP2700~XP2999)", "count": 90}], "recruit_yday": 12, "msg_yday": 6, "recruit_daily": {"labels": ["10-15", "10-16", "10-17", "10-18", "10-19", "10-20", "10-21", "10-22", "10-23", "10-24", "10-25", "10-26", "10-27", "10-28"], "groups": ["対抗戦", "オープン", "サーモン", "別ゲー", "プラベ", "大会"], "series": {"対抗戦": [11, 1, 4, 10, 10, 1, 0, 4, 7, 3, 13, 2, 7, 1], "オープン": [0, 3, 7, 5, 1, 4, 6, 2, 6, 4, 4, 4, 4, 5], "サーモン": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], "別ゲー": [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0], "プラベ": [0, 0, 2, 2, 4, 3, 2, 2, 0, 4, 5, 2, 0, 1], "大会": [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}}}, "xp": {"available": true, "rows": [["", "", "", "エリアXP", "", "最高XP", ""], ["", "～", "2399", "28人", "13.3%", "26人", "12.3%"], ["2400", "～", "2499", "23人", "10.9%", "23人", "10.9%"], ["2500", "～", "2599", "34人", "16.1%", "29人", "13.7%"], ["2600", "～", "2699", "36人", "17.1%", "40人", "19.0%"], ["2700", "～", "2799", "39人", "18.5%", "41人", "19.4%"], ["2800", "～", "2899", "22人", "10.4%", "23人", "10.9%"], ["2900", "～", "2999", "17人", "8.1%", "15人", "7.1%"], ["3000", "～", "", "12人", "5.7%", "14人", "6.6%"], ["", "", "", "51人", "24.2%", "", ""], ["", "", "", "70人", "33.2%", "", ""], ["", "", "", "90人", "42.7%", "", ""]], "area_avg": 2658, "max_avg": 2666}};
   var of = window.fetch ? window.fetch.bind(window) : null;
   window.fetch = function(url){
     var u = String(url);
@@ -377,6 +379,7 @@ tr.clickable { cursor: pointer; }
     <button class="tf tf-all active"    onclick="setType(null)">全体</button>
     <button class="tf tf-kyata"         onclick="setType('キャタピー応援プラベ')">🐛 キャタ応援</button>
     <button class="tf tf-kyatatora"     onclick="setType('キャタトラ交流プラベ')">🐯 キャタトラ</button>
+    <button class="tf tf-kyatabata"     onclick="setType('キャタバタプラベ')">🌿 キャタバタ</button>
     <button class="tf tf-bata"          onclick="setType('バタフリープラベ')">🦋 バタフリー</button>
     <button class="tf tf-taishiki"      onclick="setType('対式プラベ')">⚔️ 対式</button>
     <button class="tf tf-nwin"          onclick="setType('n勝プラベ')">🏆 n勝</button>
@@ -489,6 +492,7 @@ tr.clickable { cursor: pointer; }
       <button class="tf tf-all active"    onclick="setSchedType(null)">全体</button>
       <button class="tf tf-kyata"         onclick="setSchedType('キャタピー応援プラベ')">🐛 キャタ応援</button>
       <button class="tf tf-kyatatora"     onclick="setSchedType('キャタトラ交流プラベ')">🐯 キャタトラ</button>
+      <button class="tf tf-kyatabata"     onclick="setSchedType('キャタバタプラベ')">🌿 キャタバタ</button>
       <button class="tf tf-bata"          onclick="setSchedType('バタフリープラベ')">🦋 バタフリー</button>
       <button class="tf tf-taishiki"      onclick="setSchedType('対式プラベ')">⚔️ 対式</button>
       <button class="tf tf-nwin"          onclick="setSchedType('n勝プラベ')">🏆 n勝</button>
@@ -1122,6 +1126,7 @@ tr.clickable { cursor: pointer; }
       <button class="tf tf-all active"    onclick="setConvType(null)">全体</button>
       <button class="tf tf-kyata"         onclick="setConvType('キャタピー応援プラベ')">🐛 キャタ応援</button>
       <button class="tf tf-kyatatora"     onclick="setConvType('キャタトラ交流プラベ')">🐯 キャタトラ</button>
+      <button class="tf tf-kyatabata"     onclick="setConvType('キャタバタプラベ')">🌿 キャタバタ</button>
       <button class="tf tf-bata"          onclick="setConvType('バタフリープラベ')">🦋 バタフリー</button>
       <button class="tf tf-taishiki"      onclick="setConvType('対式プラベ')">⚔️ 対式</button>
       <button class="tf tf-nwin"          onclick="setConvType('n勝プラベ')">🏆 n勝</button>
@@ -1158,6 +1163,7 @@ let currentDetailUid = null;
 const TYPE_CLASS = {
   'キャタピー応援プラベ': 'kyata',
   'キャタトラ交流プラベ': 'kyatatora',
+  'キャタバタプラベ':     'kyatabata',
   'バタフリープラベ':     'bata',
   '対式プラベ':           'taishiki',
   'n勝プラベ':            'nwin',
@@ -1166,6 +1172,7 @@ const TYPE_CLASS = {
 const TYPE_COLOR = {
   'キャタピー応援プラベ': '#f5c842',
   'キャタトラ交流プラベ': '#4caf8a',
+  'キャタバタプラベ':     '#3f8fd2',
   'バタフリープラベ':     '#c77af5',
   '対式プラベ':           '#f06292',
   'n勝プラベ':            '#ef9a3d',
@@ -1200,7 +1207,7 @@ function setType(type) {
   const btns = document.querySelectorAll('#tab-rank .type-filter .tf');
   if (type === null) btns[0].classList.add('active');
   else {
-    const idx = ['キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'].indexOf(type);
+    const idx = ['キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'].indexOf(type);
     if (idx >= 0) btns[idx+1].classList.add('active');
   }
   // 最高連勝列を全体時のみ表示
@@ -1220,7 +1227,7 @@ function setConvType(type) {
   const btns = document.querySelectorAll('#tab-conv .type-filter .tf');
   if (type === null) btns[0].classList.add('active');
   else {
-    const idx = ['キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'].indexOf(type);
+    const idx = ['キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'].indexOf(type);
     if (idx >= 0) btns[idx+1].classList.add('active');
   }
   const lbl = type ? `— ${type}` : '';
@@ -1249,7 +1256,7 @@ async function loadRanking() {
 async function loadTypeSummary() {
   const data = await fetch('/api/type_summary').then(r=>r.json());
   const wrap = document.getElementById('type-cards-wrap');
-  const order = ['キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'];
+  const order = ['キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'];
   const sorted = order.map(t=>data.find(d=>d.type===t)).filter(Boolean);
   wrap.innerHTML = sorted.map(d=>{
     const cls = TYPE_CLASS[d.type] || '';
@@ -1526,6 +1533,7 @@ async function loadConv() {
   const maxG = Math.max(...data.map(p=>p.games), 10);
   // ランク別に分けて凡例つきで表示（バタフリー=紫 / トランセル=緑 / キャタピー=黄 / 未設定=グレー）
   const RANK_GROUPS = [
+    {key:'🔵', label:'🔵 メガバタフリー', color:'#4fb3e8'},
     {key:'🟣', label:'🟣 バタフリー', color:'#b06bf2'},
     {key:'🟢', label:'🟢 トランセル', color:'#4caf8a'},
     {key:'🟡', label:'🟡 キャタピー', color:'#f5c842'},
@@ -1784,7 +1792,7 @@ function wrCls(wr) {
   if(wr==null) return '';
   return wr>=55?'wr-high':wr<=45?'wr-low':'wr-mid';
 }
-const RANK_NAME = {'🟣':'バタフリー','🟢':'トランセル','🟡':'キャタピー'};
+const RANK_NAME = {'🔵':'メガバタフリー','🟣':'バタフリー','🟢':'トランセル','🟡':'キャタピー'};
 function rankBadge(rank) {
   if(!rank) return '';
   return `<span title="${RANK_NAME[rank]||''}" style="margin-right:5px">${rank}</span>`;
@@ -1847,7 +1855,7 @@ function setSchedType(type) {
   const btns = document.querySelectorAll('#tab-sched .type-filter .tf');
   if (type === null) btns[0].classList.add('active');
   else {
-    const idx = ['キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'].indexOf(type);
+    const idx = ['キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'].indexOf(type);
     if (idx >= 0) btns[idx+1].classList.add('active');
   }
   loadSchedule();
@@ -1879,7 +1887,7 @@ async function loadSchedule() {
   let datasets, stacked = false, showLegend = false;
   if (!currentSchedType && d.weekday_by_type) {
     // 全体表示：種別ごとの積み上げグラフ（数の多い対式を一番下＝配列の先頭に）
-    const order = ['対式プラベ','キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','n勝プラベ','エンジョイプラベ'];
+    const order = ['対式プラベ','キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','n勝プラベ','エンジョイプラベ'];
     datasets = order.filter(t => d.weekday_by_type[t]).map(t => ({
       label: t,
       data: d.weekday_by_type[t],
@@ -1918,7 +1926,7 @@ async function loadSchedule() {
   const hlabels = Array.from({length:24}, (_,h)=>h+'時');
   let hdatasets, hstacked=false, hlegend=false;
   if (!currentSchedType && d.hourly_by_type) {
-    const order = ['キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'];
+    const order = ['キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','対式プラベ','n勝プラベ','エンジョイプラベ'];
     hdatasets = order.filter(t=>d.hourly_by_type[t]).map(t=>({
       label:t, data:d.hourly_by_type[t], backgroundColor:TYPE_COLOR[t]||'#7c6af5'
     }));
@@ -2507,7 +2515,7 @@ async function loadIntro(){
                (d.msg_yday != null && d.msg_yday !== undefined) ? `昨日 +${n(d.msg_yday)}件` : '')
     + introSub('📣 累計募集', n(d.recruit_total),
                (d.recruit_yday != null && d.recruit_yday !== undefined) ? `昨日 +${n(d.recruit_yday)}件` : '');
-  const sh = {'キャタピー応援プラベ':'キャタ応援','キャタトラ交流プラベ':'キャタトラ','バタフリープラベ':'バタフリー','対式プラベ':'対式','n勝プラベ':'n勝','エンジョイプラベ':'エンジョイ'};
+  const sh = {'キャタピー応援プラベ':'キャタ応援','キャタトラ交流プラベ':'キャタトラ','キャタバタプラベ':'キャタバタ','バタフリープラベ':'バタフリー','対式プラベ':'対式','n勝プラベ':'n勝','エンジョイプラベ':'エンジョイ'};
   const tcol = t => (typeof TYPE_COLOR!=='undefined' ? TYPE_COLOR[t] : '') || '#7c6af5';
   // 📣 日別の募集数（対抗戦・オープン・サーモン・別ゲー・プラベ・大会）
   const RCOL = {'対抗戦':'#e23b3b','オープン':'#f4a13c','サーモン':'#ef7d3d','別ゲー':'#7c6af5','プラベ':'#3fa45b','大会':'#c8901f'};
@@ -2517,7 +2525,7 @@ async function loadIntro(){
                         .map(g => ({label:g, data:rd.series[g], backgroundColor:RCOL[g]||'#999'}));
     introStacked('intro-wday-chart', rd.labels, ds, Math.min(rd.labels.length, 14));
   } else if (d.weekday_by_type && Object.keys(d.weekday_by_type).length) {
-    const wo = ['対式プラベ','キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','n勝プラベ','エンジョイプラベ'];
+    const wo = ['対式プラベ','キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','n勝プラベ','エンジョイプラベ'];
     const ds = wo.filter(t=>d.weekday_by_type[t]).map(t=>({label:sh[t]||t, data:d.weekday_by_type[t], backgroundColor:tcol(t)}));
     introStacked('intro-wday-chart', ['月','火','水','木','金','土','日'], ds, 7);
   } else if (d.weekday_matches) {
@@ -2526,7 +2534,7 @@ async function loadIntro(){
   // 直近2週間のプラベ試合数（日別・種別積み上げ）
   if (d.biweek && d.biweek.dates && d.biweek.dates.length) {
     const blabels = d.biweek.dates.map(x => (x||'').slice(5));
-    const bord = ['対式プラベ','キャタピー応援プラベ','キャタトラ交流プラベ','バタフリープラベ','n勝プラベ','エンジョイプラベ'];
+    const bord = ['対式プラベ','キャタピー応援プラベ','キャタトラ交流プラベ','キャタバタプラベ','バタフリープラベ','n勝プラベ','エンジョイプラベ'];
     const bds = bord.filter(t => d.biweek.by_type[t]).map(t => ({label: sh[t]||t, data: d.biweek.by_type[t], backgroundColor: tcol(t)}));
     introStacked('intro-week-chart', blabels, bds, 14);
   }
