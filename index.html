@@ -220,8 +220,15 @@ tr.clickable { cursor: pointer; }
 #tab-intro .hm-hint { display:none; font-size:11px; color:var(--hat); font-weight:700; text-align:right; margin-top:5px; }
 
 /* ランクの道 */
-#tab-intro .road { width:100%; display:block; }
-#tab-intro .road text { font-family:"M PLUS Rounded 1c",sans-serif; }
+#tab-intro .stairs { display:flex; align-items:flex-end; gap:6px; height:220px; margin-top:8px; }
+#tab-intro .stairs .col { flex:1; min-width:0; display:flex; flex-direction:column; justify-content:flex-end; text-align:center; }
+#tab-intro .stairs .nm { font-weight:800; font-size:14px; white-space:nowrap; color:#2b2416; }
+#tab-intro .stairs .xp { font-size:11px; color:#6b5d3e; margin-bottom:4px; white-space:nowrap; }
+#tab-intro .stairs .blk { border-radius:8px 8px 0 0; color:#fff; padding-top:10px; }
+#tab-intro .stairs .n { font-size:30px; font-weight:800; line-height:1; }
+#tab-intro .stairs .u { font-size:12px; font-weight:700; margin-left:2px; }
+#tab-intro .stairs-arrow { font-size:11px; color:#6b5d3e; text-align:right; margin-top:6px; border-top:2px solid #2b2416; padding-top:4px; }
+@media (max-width:480px){ #tab-intro .stairs .nm{font-size:10px} #tab-intro .stairs .xp{font-size:9.5px} #tab-intro .stairs .n{font-size:24px} #tab-intro .stairs{gap:4px} }
 #tab-intro .rankgrid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 #tab-intro .rankcard { background:#fff; border-radius:10px; padding:10px 12px; border-top:5px solid var(--c); font-size:12.5px; line-height:1.7; }
 #tab-intro .rankcard b { display:block; font-size:13.5px; }
@@ -839,7 +846,7 @@ tr.clickable { cursor: pointer; }
   <!-- 管理人から -->
   <div class="note blue">
     <h4>この鯖をやっている理由</h4>
-    <p>子育て中の自分が「前もって決めた時間どおりに対抗戦やプラベをやるのが難しい」という悩みから、この鯖を作りました。今は少し落ち着きましたが、<span class="hl">同じ悩みを抱えながらも「それでもやりたい」という人</span>のために開けています。</p>
+    <p><span class="hl">子育て中の自分が「前もって決めた時間どおりに対抗戦やプラベをやるのが難しい」という悩み</span>から、この鯖を作りました。今は少し落ち着きましたが、<span class="hl">同じ悩みを抱えながらも「それでもやりたい」という人</span>のために開けています。</p>
     <p>活発さよりも、<span class="hl">指示なしの方針に共感してくれる人・排他的なグループを作らずに楽しめる人</span>に参加してほしいです。みんながやりたい時にサクッと集まって遊べる、そんな場所であり続けたいと思っています。</p>
     <div class="sign">ほろよい管理人（@ikagachieria）</div>
     <details class="more"><summary>管理人の紹介</summary><div class="in">
@@ -884,7 +891,7 @@ tr.clickable { cursor: pointer; }
       ・集計した戦績・通話時間のデータは、<b>この鯖での活動や管理（退出処理の判定など）のためだけ</b>に使います。<br>
       ・新規メンバー募集などで鯖の外に公開する場合は、<b>個人が特定できない形</b>（例：「◯時のプラベの参加人数」など）でのみ使用します。このページの数字もそのデータが元です。<br>
       ・本人の許可なく、個人のデータを他の人へ渡すことはありません。<br>
-      ・現在データを閲覧できるのは、メンテ担当の <b>ほろよい・ネル・ぴうちっち</b> のみです（増える場合は告知します）。
+      ・現在データを閲覧できるのは、メンテ担当の <b>ほろよい・ネル・ぴうい</b> のみです（増える場合は告知します）。
     </div></details>
   </div>
 
@@ -893,7 +900,7 @@ tr.clickable { cursor: pointer; }
     <h4>ランクは4つ</h4>
     <p>メンバー間でウデマエ差が開いてきたため、XPに応じて4段階のランク分けをしています。同レベル帯と交流して横の繋がりを作るのが狙いです。</p>
     <div id="intro-road"></div>
-    <div class="note2" style="text-align:center">丸の中は今の人数（マイページのエリアXPで判定）／ <span class="i-today"></span></div>
+    <div class="note2" style="text-align:center">数字は今の人数（マイページのエリアXPで判定）／ <span class="i-today"></span></div>
     <details class="more"><summary>それぞれのランク</summary><div class="in">
       <div class="rankgrid">
         <div class="rankcard" style="--c:var(--cat)"><b>キャタピーランク</b><span class="xp">XP2000〜XP2499</span>
@@ -944,8 +951,8 @@ tr.clickable { cursor: pointer; }
       <li style="--c:var(--cat)"><b>キャタピー応援プラベ</b><span class="xp">XP2100〜2499</span><span>上のランクの人も、マイページの練習中のブキがキャタピー帯（XP2500未満）ならそのブキで参加OK</span></li>
       <li style="--c:var(--tra)"><b>キャタトラ交流プラベ</b><span class="xp">XP2100〜2699</span><span>キャタピーランクもちょっとチャレンジできる交流プラベ</span></li>
       <li style="--c:var(--tra)"><b>トラバタプラベ</b><span class="xp">XP2500〜2999</span><span>トランセルとバタフリーの交流プラベ</span></li>
-      <li style="--c:var(--bata)"><b>バタフリープラベ</b><span class="xp">XP2700〜3200</span><span>バタフリー・メガバタフリーのプラベ。この鯖で一番ハイレベル。みんなで試合を観ながらお酒を飲んで雑談観戦（スポーツバー的な）したりもしています</span></li>
-      <li style="--c:var(--mega)"><b>メガバタフリープラベ</b><span class="xp">XP3000〜</span><span>メガバタフリーランクだけのプラベ。観戦の募集もあります</span></li>
+      <li style="--c:var(--bata)"><b>バタフリープラベ</b><span class="xp">XP2700〜3200</span><span>バタフリー・メガバタフリーのプラベ。みんなで試合を観ながらお酒を飲んで雑談観戦（スポーツバー的な）したりもしています</span></li>
+      <li style="--c:var(--mega)"><b>メガバタフリープラベ</b><span class="xp">XP3000〜</span><span>メガバタフリーランクだけのプラベ。この鯖で一番ハイレベル。観戦の募集もあります</span></li>
       <li><b>対式プラベ</b><span class="xp">XP2100〜3200</span><span>全員参加のプラベ。一番募集が多いです。自動botでチーム分けして回します</span></li>
       <li><b>エンジョイプラベ</b><span class="xp">XP2100〜3200</span><span>チーム分け・勝敗・ステージ抽選はなし。ゆるく集まって自由に遊ぶ。１０人でわいわいか、4vs4でVC分け＠２人観戦から選べる</span></li>
       <li><b>n勝プラベ</b><span class="xp">XP2100〜3200</span><span>誰かが7〜14勝するまで（または勝率分け）回すガチよりのプラベ。ステージ自動抽選</span></li>
@@ -1047,7 +1054,7 @@ tr.clickable { cursor: pointer; }
           <span class="lvl y">採用率低下</span>更新がない／募集専用垢／嫉妬心の強い・ネガティブな発信／鯖の雰囲気に合わなそう／スプラ関係の鯖を3つ以上掛け持ち<br>
           受け身な方（誘ってほしい・教えてほしい）も採用率が下がります。こちらから声をかける仕組みではないので、<b>自分から輪に入る動きができる方</b>だと続きやすいです。</li>
         <li>現メンバーからのトラブル報告<br><span class="lvl">完全NG</span>直接のトラブル　<span class="lvl y">採用率低下</span>噂・目撃情報あり</li>
-        <li>使用武器とXP<br><span class="lvl y">採用率低下</span>使用武器が後衛のみ／XPが推奨範囲外（2300〜3000）<br>XPが高いほど、うちに入りたいかの理由が明確に欲しいです。とくにXP3000超えの方で<b>強さや勝ちを求めて</b>のご応募は、当鯖のレベルを超えているためお応えできません。エリア中心・エンジョイ寄りで、子育てや仕事の合間にゆるく遊ぶ鯖です。その前提を分かったうえで来ていただける方だと、お互いに気持ちよく続けられます。</li>
+        <li>使用武器とXP<br><span class="lvl y">採用率低下</span>使用武器が後衛のみ／XPが推奨範囲外（2300〜3000）<br>XPが高いほど、うちに入りたいかの理由が明確に欲しいです。とくにXP3000超えの方で<b>強さや勝ちを求めて</b>のご応募は、当鯖のレベルを超えているためお応えできません。エリア中心・エンジョイ寄りで、子育てや仕事の合間にサクッと遊ぶ鯖です。その前提を分かったうえで来ていただける方だと、お互いに気持ちよく続けられます。</li>
       </ul>
     </div></details>
     <details class="more"><summary>参加までの流れ</summary><div class="in">
@@ -1058,7 +1065,7 @@ tr.clickable { cursor: pointer; }
         <li>武器種・人数のバランス調整（運営にて実施）</li>
         <li>X（旧Twitter）にてDMグループ作成</li>
         <li>オリエンテーション用Discordサーバーへ招待<small>説明・案内</small></li>
-        <li>仮所属期間：加入後1ヶ月以内に3回参加必須<small>鯖に合っているか相互確認期間</small></li>
+        <li>仮所属期間：加入後1ヶ月以内に3回参加必須<small>鯖に合っているか相互確認期間。どうしてもコミュニケーションを取るのが難しい場合は、この段階で退出をお願いいたします</small></li>
       </ul>
     </div></details>
     <div class="callout">現所属メンバーと楽しく遊べそうと判断された方のみ招待しています。<br>所属メンバーに知り合いがいれば、応募前にアドバイスをもらうのがオススメです。</div>
@@ -2454,19 +2461,15 @@ function introRoad(rc){
   const cols = {'キャタピー':'#f0c419','トランセル':'#3fae5f','バタフリー':'#8b5bc9','メガバタフリー':'#36b3d9'};
   const xps = {'キャタピー':'XP2000〜2499','トランセル':'XP2500〜2699','バタフリー':'XP2700〜2999','メガバタフリー':'XP3000〜'};
   const order = ['キャタピー','トランセル','バタフリー','メガバタフリー'];
+  const hs = [62, 94, 126, 158];
   const by = {}; (rc||[]).forEach(x => { by[x.label] = x.count; });
-  const pts = [[45,75],[145,35],[245,85],[335,40]];
-  let svg = '<svg class="road" viewBox="0 -10 380 170" role="img" aria-label="ランク別の人数">'
-          + '<path d="M45 75 C85 25,115 25,145 35 S205 115,245 85 S305 25,335 40" stroke="#2b2416" stroke-width="3" stroke-dasharray="2 9" stroke-linecap="round" fill="none"/>';
+  let h = '<div class="stairs" role="img" aria-label="ランク別の人数">';
   order.forEach((nm, i) => {
-    const [x, y] = pts[i], c = by[nm], r = (c == null) ? 16 : Math.max(16, Math.min(30, 14 + c / 5));
-    const ty = (i % 2) ? y + r + 18 : y - r - 22;
-    svg += `<circle cx="${x}" cy="${y}" r="${r}" fill="${cols[nm]}" stroke="#fff" stroke-width="3"/>`
-         + `<text x="${x}" y="${y + 6}" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">${c == null ? '-' : c}</text>`
-         + `<text x="${x}" y="${ty}" text-anchor="middle" font-size="12.5" font-weight="800" fill="#2b2416">${nm}</text>`
-         + `<text x="${x}" y="${ty + 14}" text-anchor="middle" font-size="10" fill="#6b5d3e">${xps[nm]}</text>`;
+    const c = by[nm];
+    h += `<div class="col"><div class="nm">${nm}</div><div class="xp">${xps[nm]}</div>`
+       + `<div class="blk" style="background:${cols[nm]};height:${hs[i]}px"><span class="n">${c == null ? '-' : c}</span><span class="u">人</span></div></div>`;
   });
-  el.innerHTML = svg + '</svg>';
+  el.innerHTML = h + '</div><div class="stairs-arrow">XPが高い →</div>';
 }
 function introBar(id, labels, data, color, maxTicks){
   const ctx = document.getElementById(id);
