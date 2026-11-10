@@ -10,13 +10,6 @@
 <meta property="og:site_name" content="大人のガチエリア鯖">
 <meta property="og:title" content="大人のガチエリア鯖 紹介＆新規メンバー応募サイト">
 <meta property="og:description" content="スプラトゥーンのエンジョイサーバー「大人のガチエリア鯖」の新規メンバー募集ページ。2か月に1回募集。30代中心・既婚者/子持ち多め、XP2300〜3000目安。募集は1時間単位、活動9:00〜25:00、聞き専・掛け持ちOK、味方への指示はNG。">
-<link rel="canonical" href="https://otonasaba.github.io/">
-<meta property="og:url" content="https://otonasaba.github.io/">
-<meta property="og:image" content="https://otonasaba.github.io/ogp.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="大人のガチエリア鯖のアイコン">
-<meta name="twitter:card" content="summary_large_image">
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -220,15 +213,15 @@ tr.clickable { cursor: pointer; }
 #tab-intro .hm-hint { display:none; font-size:11px; color:var(--hat); font-weight:700; text-align:right; margin-top:5px; }
 
 /* ランクの道 */
-#tab-intro .stairs { display:flex; align-items:flex-end; gap:6px; height:220px; margin-top:8px; }
-#tab-intro .stairs .col { flex:1; min-width:0; display:flex; flex-direction:column; justify-content:flex-end; text-align:center; }
-#tab-intro .stairs .nm { font-weight:800; font-size:14px; white-space:nowrap; color:#2b2416; }
-#tab-intro .stairs .xp { font-size:11px; color:#6b5d3e; margin-bottom:4px; white-space:nowrap; }
-#tab-intro .stairs .blk { border-radius:8px 8px 0 0; color:#fff; padding-top:10px; }
-#tab-intro .stairs .n { font-size:30px; font-weight:800; line-height:1; }
-#tab-intro .stairs .u { font-size:12px; font-weight:700; margin-left:2px; }
-#tab-intro .stairs-arrow { font-size:11px; color:#6b5d3e; text-align:right; margin-top:6px; border-top:2px solid #2b2416; padding-top:4px; }
-@media (max-width:480px){ #tab-intro .stairs .nm{font-size:10px} #tab-intro .stairs .xp{font-size:9.5px} #tab-intro .stairs .n{font-size:24px} #tab-intro .stairs{gap:4px} }
+#tab-intro .note p.rk-lead { font-size:16px; line-height:1.8; margin:0 0 2px; }
+#tab-intro .rk-hint { text-align:right; font-size:12px; color:#6b5d3e; margin:14px 0 6px; }
+#tab-intro .rk-cards { display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+#tab-intro .rk-card { background:#fff; border:1.5px solid #e6dfcf; border-radius:12px; padding:9px 6px 12px; text-align:center; min-width:0; }
+#tab-intro .rk-card .bar { width:38%; height:6px; border-radius:3px; margin:0 auto 10px; }
+#tab-intro .rk-card .nm { font-weight:800; font-size:15px; white-space:nowrap; }
+#tab-intro .rk-card .xp { font-size:11.5px; color:#6b5d3e; margin:3px 0 10px; white-space:nowrap; }
+#tab-intro .rk-card .ct { display:inline-block; min-width:72%; border-radius:10px; padding:6px 4px; font-size:26px; font-weight:800; line-height:1.2; }
+@media (max-width:560px){ #tab-intro .rk-cards{grid-template-columns:repeat(2,1fr)} #tab-intro .rk-hint{display:none} #tab-intro .note p.rk-lead{font-size:14.5px} }
 #tab-intro .rankgrid { display:grid; grid-template-columns:1fr 1fr; gap:8px; }
 #tab-intro .rankcard { background:#fff; border-radius:10px; padding:10px 12px; border-top:5px solid var(--c); font-size:12.5px; line-height:1.7; }
 #tab-intro .rankcard b { display:block; font-size:13.5px; }
@@ -898,9 +891,10 @@ tr.clickable { cursor: pointer; }
   <!-- ランク -->
   <div class="note">
     <h4>ランクは4つ</h4>
-    <p>メンバー間でウデマエ差が開いてきたため、XPに応じて4段階のランク分けをしています。同レベル帯と交流して横の繋がりを作るのが狙いです。</p>
+    <p class="rk-lead">XPに応じて4つのランクに分けています。</p>
+    <p>同じくらいのウデマエのメンバー同士が交流しやすくなるようにするためです。</p>
     <div id="intro-road"></div>
-    <div class="note2" style="text-align:center">数字は今の人数（マイページのエリアXPで判定）／ <span class="i-today"></span></div>
+    <div class="note2" style="text-align:center;margin-top:8px">人数はマイページのエリアXPで判定／ <span class="i-today"></span></div>
     <details class="more"><summary>それぞれのランク</summary><div class="in">
       <div class="rankgrid">
         <div class="rankcard" style="--c:var(--cat)"><b>キャタピーランク</b><span class="xp">XP2000〜XP2499</span>
@@ -2455,21 +2449,20 @@ function introHero(val, unit, label, color, note){
 function introSub(label, val, note){
   return `<div class="num"><div class="nv" style="font-size:18px">${val}</div><div class="nl">${label}</div>${note ? `<div class="nn">${note}</div>` : ''}</div>`;
 }
-// ランクの道（4つの丸を道でつなぎ、丸の中に今の人数）
+// ランク別の人数（4枚のカード。右に行くほどXPが高い）
 function introRoad(rc){
   const el = document.getElementById('intro-road'); if (!el) return;
-  const cols = {'キャタピー':'#f0c419','トランセル':'#3fae5f','バタフリー':'#8b5bc9','メガバタフリー':'#36b3d9'};
-  const xps = {'キャタピー':'XP2000〜2499','トランセル':'XP2500〜2699','バタフリー':'XP2700〜2999','メガバタフリー':'XP3000〜'};
+  const cols = {'キャタピー':['#f0c419','#fff8dc'],'トランセル':['#3fae5f','#ebf7ee'],'バタフリー':['#8b5bc9','#f3edfb'],'メガバタフリー':['#36b3d9','#e6f6fb']};
+  const xps = {'キャタピー':'XP 2000〜2499','トランセル':'XP 2500〜2699','バタフリー':'XP 2700〜2999','メガバタフリー':'XP 3000以上'};
   const order = ['キャタピー','トランセル','バタフリー','メガバタフリー'];
-  const hs = [62, 94, 126, 158];
   const by = {}; (rc||[]).forEach(x => { by[x.label] = x.count; });
-  let h = '<div class="stairs" role="img" aria-label="ランク別の人数">';
-  order.forEach((nm, i) => {
-    const c = by[nm];
-    h += `<div class="col"><div class="nm">${nm}</div><div class="xp">${xps[nm]}</div>`
-       + `<div class="blk" style="background:${cols[nm]};height:${hs[i]}px"><span class="n">${c == null ? '-' : c}</span><span class="u">人</span></div></div>`;
+  let h = '<div class="rk-hint">右に行くほどXPが高い →</div><div class="rk-cards" role="img" aria-label="ランク別の人数">';
+  order.forEach(nm => {
+    const c = by[nm], [fg, bg] = cols[nm];
+    h += `<div class="rk-card"><div class="bar" style="background:${fg}"></div><div class="nm">${nm}</div><div class="xp">${xps[nm]}</div>`
+       + `<div class="ct" style="background:${bg}">${c == null ? '-' : c}人</div></div>`;
   });
-  el.innerHTML = h + '</div><div class="stairs-arrow">XPが高い →</div>';
+  el.innerHTML = h + '</div>';
 }
 function introBar(id, labels, data, color, maxTicks){
   const ctx = document.getElementById(id);
